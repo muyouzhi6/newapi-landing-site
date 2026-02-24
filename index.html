@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>木有知 AI API</title>
+  <meta name="description" content="稳定 · 低延迟 · 面向开发者。30 秒完成 Codex 接入" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <img class="brand__logo" src="https://files.catbox.moe/7r74lg.jpg" alt="logo" />
+        <div class="brand__text">
+          <div class="brand__name">木有知 AI API</div>
+          <div class="brand__tag">稳定 · 低延迟 · 面向 Codex 用户</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#quick" class="nav__link">快速开始</a>
+        <a href="#codex" class="nav__link">Codex 接入</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="/token" class="nav__btn">创建 Key</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero__left">
+        <h1 class="hero__title">一站式 API 接入，<span class="grad">稳定、透明、开箱即用</span></h1>
+        <p class="hero__sub">从测试到正式业务上线，用更简单的方式调用你需要的模型能力。适合 Codex / SDK / 自动化。</p>
+        <div class="hero__cta">
+          <a class="btn primary" href="/token">立即创建 API Key</a>
+          <a class="btn secondary" href="#codex">查看 Codex 教程</a>
+        </div>
+        <div class="trust">
+          <div class="pill">实时状态可见</div>
+          <div class="pill">清晰计费</div>
+          <div class="pill">低延迟优化</div>
+          <div class="pill">可复制模板</div>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="card stat">
+          <div class="stat__k">上手时间</div>
+          <div class="stat__v">30s</div>
+          <div class="stat__d">按下方模板配置即可</div>
+        </div>
+        <div class="card stat">
+          <div class="stat__k">推荐</div>
+          <div class="stat__v">Codex</div>
+          <div class="stat__d">Responses wire API</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick" class="grid3">
+      <div class="card feature">
+        <div class="feature__n">① 创建 Key</div>
+        <div class="feature__t">在「令牌管理」创建一个用于 Codex 的 Key。</div>
+      </div>
+      <div class="card feature">
+        <div class="feature__n">② 写入配置</div>
+        <div class="feature__t">把 config.toml + auth.json 放到本机 .codex 目录。</div>
+      </div>
+      <div class="card feature">
+        <div class="feature__n">③ 开始使用</div>
+        <div class="feature__t">重启 Codex，开始对话与编码任务。</div>
+      </div>
+    </section>
+
+    <section id="codex" class="section">
+      <div class="section__head">
+        <h2>🚀 Codex 接入教程</h2>
+        <p>按系统找到配置目录，复制两段配置即可。不会暴露任何内部信息。</p>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>配置目录</h3>
+          <ul class="list">
+            <li><b>Windows</b>: <code>C:\Users\你的用户名\.codex</code></li>
+            <li><b>Linux / macOS</b>: <code>~/.codex</code></li>
+          </ul>
+          <div class="note">建议先备份原文件，再粘贴下方内容。</div>
+        </div>
+
+        <div class="card">
+          <h3>推荐模型</h3>
+          <div class="note">默认示例：<b>gpt-5.2</b> + <b>xhigh</b>（可后续按需改）</div>
+          <div class="pillrow">
+            <span class="pill">wire_api = responses</span>
+            <span class="pill">requires_openai_auth = true</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="codegrid">
+        <div class="card">
+          <div class="codehead">
+            <div>
+              <div class="codehead__title">config.toml</div>
+              <div class="codehead__sub">写入到 <code>~/.codex/config.toml</code></div>
+            </div>
+            <button class="copy" data-copy="config">复制</button>
+          </div>
+          <pre class="code" id="code-config"><code>model = "gpt-5.2"
+model_reasoning_effort = "xhigh"
+model_provider = "newapi"
+
+[model_providers.newapi]
+name = "newapi"
+base_url = "https://newapi.165201.xyz/v1"
+wire_api = "responses"
+requires_openai_auth = true
+</code></pre>
+        </div>
+
+        <div class="card">
+          <div class="codehead">
+            <div>
+              <div class="codehead__title">auth.json</div>
+              <div class="codehead__sub">写入到 <code>~/.codex/auth.json</code></div>
+            </div>
+            <button class="copy" data-copy="auth">复制</button>
+          </div>
+          <pre class="code" id="code-auth"><code>{
+  "OPENAI_API_KEY": "这里填入你刚创建的 Key"
+}
+</code></pre>
+        </div>
+      </div>
+
+      <div class="card warn">
+        <b>常见问题</b>
+        <div class="warn__grid">
+          <div><b>401</b>：Key 错误/前后空格</div>
+          <div><b>JSON 报错</b>：auth.json 不是合法 JSON</div>
+          <div><b>连接失败</b>：确认可访问 <code>https://newapi.165201.xyz/v1</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="section__head">
+        <h2>❓ FAQ</h2>
+        <p>把买家最常遇到的问题提前写清楚，减少来回沟通。</p>
+      </div>
+
+      <details class="faq" open>
+        <summary>我应该怎么开始试用？</summary>
+        <div class="faq__a">创建 Key → 按上方教程配置 Codex → 直接开始调用即可。</div>
+      </details>
+      <details class="faq">
+        <summary>能不能限制 Key 的模型范围？</summary>
+        <div class="faq__a">可以，在令牌管理里给 Key 设置模型限制与权限策略。</div>
+      </details>
+      <details class="faq">
+        <summary>我需要对接 OpenAI SDK / 其他客户端怎么办？</summary>
+        <div class="faq__a">直接使用同一 base_url：<code>https://newapi.165201.xyz/v1</code>，鉴权用你的 Key。</div>
+      </details>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">Made with love · 木有知</div>
+        <div class="footer__muted">请妥善保管 API Key，避免泄露。</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
