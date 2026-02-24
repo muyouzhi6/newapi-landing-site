@@ -27,11 +27,11 @@ body{
 /* when embedded by new-api iframe, reserve top safe area to avoid header clipping */
 body.in-iframe .topbar,
 html.in-iframe .topbar {
-  top: 10px;
+  top: 18px;
 }
 body.in-iframe .wrap,
 html.in-iframe .wrap {
-  padding-top: 10px;
+  padding-top: 18px;
 }
 code,pre{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 
@@ -115,3 +115,6 @@ code,pre{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,C
   .warn__grid{grid-template-columns:1fr}
   .hero__title{font-size:34px}
 }
+
+
+body.in-iframe .hero, html.in-iframe .hero { margin-top: 8px; }
