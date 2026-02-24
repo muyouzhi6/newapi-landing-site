@@ -69,16 +69,16 @@
 
     <section id="quick" class="grid3">
       <div class="card feature">
-        <div class="feature__n">① 创建 Key</div>
-        <div class="feature__t">在「令牌管理」创建一个用于 Codex 的 Key。</div>
+        <div class="feature__n">① 注册并登录</div>
+        <div class="feature__t">先注册账号并登录控制台，再进入令牌管理。</div>
       </div>
       <div class="card feature">
-        <div class="feature__n">② 写入配置</div>
-        <div class="feature__t">把 config.toml + auth.json 放到本机 .codex 目录。</div>
+        <div class="feature__n">② 创建 Key</div>
+        <div class="feature__t">在控制台「令牌管理」中新建一个用于 Codex 的 Key。</div>
       </div>
       <div class="card feature">
-        <div class="feature__n">③ 开始使用</div>
-        <div class="feature__t">重启 Codex，开始对话与编码任务。</div>
+        <div class="feature__n">③ 写入配置并开始使用</div>
+        <div class="feature__t">把 config.toml + auth.json 写入 .codex 后重启 Codex。</div>
       </div>
     </section>
 
@@ -96,6 +96,7 @@
             <li><b>Linux / macOS</b>: <code>~/.codex</code></li>
           </ul>
           <div class="note">建议先备份原文件，再粘贴下方内容。</div>
+          <div class="note" style="margin-top:8px">顺序：注册账号 → 登录控制台 → 令牌管理创建 Key。</div>
         </div>
 
         <div class="card">
@@ -113,7 +114,7 @@
           <div class="codehead">
             <div>
               <div class="codehead__title">config.toml</div>
-              <div class="codehead__sub">写入到 <code>~/.codex/config.toml</code></div>
+              <div class="codehead__sub">写入到 <code>.codex/config.toml</code></div>
             </div>
             <button class="copy" data-copy="config">复制</button>
           </div>
@@ -133,7 +134,7 @@ requires_openai_auth = true
           <div class="codehead">
             <div>
               <div class="codehead__title">auth.json</div>
-              <div class="codehead__sub">写入到 <code>~/.codex/auth.json</code></div>
+              <div class="codehead__sub">写入到 <code>.codex/auth.json</code></div>
             </div>
             <button class="copy" data-copy="auth">复制</button>
           </div>
@@ -162,7 +163,7 @@ requires_openai_auth = true
 
       <details class="faq" open>
         <summary>我应该怎么开始试用？</summary>
-        <div class="faq__a">创建 Key → 按上方教程配置 Codex → 直接开始调用即可。</div>
+        <div class="faq__a">先注册并登录 → 进入令牌管理创建 Key → 按上方教程配置 Codex。</div>
       </details>
       <details class="faq">
         <summary>能不能限制 Key 的模型范围？</summary>
