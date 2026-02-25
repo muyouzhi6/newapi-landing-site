@@ -52,6 +52,7 @@ code,pre{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,C
 .nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .nav__link{color:#4a3a68;text-decoration:none;font-weight:700;font-size:13px;opacity:.9}
 .nav__link:hover{opacity:1;text-decoration:underline}
+.nav__link:focus-visible,.nav__btn:focus-visible,.btn:focus-visible,.copy:focus-visible,.mini-copy:focus-visible,.faq summary:focus-visible{outline:3px solid rgba(143,123,230,.35);outline-offset:2px;border-radius:12px}
 .nav__btn{padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;text-decoration:none;font-weight:800;box-shadow:0 10px 24px rgba(200,123,184,.25)}
 
 .hero{display:flex;gap:16px;align-items:stretch;justify-content:space-between;margin-top:18px}
@@ -61,7 +62,9 @@ code,pre{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,C
 .grad{background:linear-gradient(90deg,var(--p2),var(--p3),var(--p4));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero__sub{margin:0 0 12px;color:var(--muted);font-size:16px;line-height:1.7}
 .hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:900}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:900;transition:transform .18s ease, box-shadow .18s ease, filter .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
 .btn.primary{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 12px 30px rgba(200,123,184,.28)}
 .btn.secondary{background:#fff;color:#5f3d86;border:1px solid var(--line)}
 .trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
@@ -85,6 +88,20 @@ code,pre{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,C
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .list{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
 .note{margin-top:10px;padding:10px 12px;border-radius:12px;background:rgba(255,243,250,.85);border:1px solid rgba(243,210,230,.9);color:#7d4a69;font-weight:700;font-size:13px}
+
+/* contact bar (manual recharge / enterprise) */
+.contactbar{margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
+  border:1px solid rgba(239,228,247,.95);
+  box-shadow:0 10px 26px rgba(143,123,230,.12);
+  color:#4a3a68;
+  backdrop-filter:blur(10px);
+}
+.contactbar__label{font-weight:900;color:#3a2e52}
+.contactbar__qq{font-weight:900}
+.mini-copy{border:none;border-radius:12px;padding:8px 10px;background:rgba(143,123,230,.14);color:#3a2e52;font-weight:900;cursor:pointer;transition:filter .18s ease, transform .18s ease}
+.mini-copy:hover{filter:brightness(1.03);transform:translateY(-1px)}
+.mini-copy:active{transform:translateY(0)}
 
 .codegrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .codehead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}

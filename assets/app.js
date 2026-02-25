@@ -19,11 +19,29 @@
     });
   }
 
+  function copyRawText(txt){
+    if(!txt) return;
+    navigator.clipboard.writeText(String(txt)).then(function(){
+      // noop
+    });
+  }
+
   document.querySelectorAll('button.copy').forEach(function(btn){
     btn.addEventListener('click', function(){
       var which=btn.getAttribute('data-copy');
       if(which==='config') copyText('code-config');
       if(which==='auth') copyText('code-auth');
+      var old=btn.innerText;
+      btn.innerText='已复制';
+      setTimeout(function(){btn.innerText=old||'复制'}, 1200);
+    });
+  });
+
+  // mini copy buttons (e.g., QQ)
+  document.querySelectorAll('button.mini-copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var txt=btn.getAttribute('data-copytext') || '';
+      copyRawText(txt);
       var old=btn.innerText;
       btn.innerText='已复制';
       setTimeout(function(){btn.innerText=old||'复制'}, 1200);
